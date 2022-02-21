@@ -1,0 +1,17 @@
+<h2>Name: <%= @offer.name %></h2>
+<p>Role: <%= @offer.role %></p>
+<p>Photo: <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %></p>
+<p>instagram: <%= @offer.instagram_link %></p>
+<p>youtube: <%= @offer.youtube_link %></p>
+<p>spotify: <%= @offer.spotify_link %></p>
+<br>
+<%= link_to "Book!", '#'%>
+<br>
+<%= link_to "Edit", edit_offer_path(@offer[:id])%>
+<br>
+<%= link_to "Delete #{@offer.name}",
+            offer_path(@offer),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+<br>
+<%= link_to 'Back to the list', offers_path %>
