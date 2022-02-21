@@ -1,0 +1,13 @@
+<h1>All the offers (singers)</h1>
+<ol>
+  <% @offers.each do |offer| %>
+    <li>Name: <%= link_to offer[:name], offer_path(offer[:id]) %></li>
+    <p>Role: <%= offer.role %></p>
+    <p>id: <%= offer.id %></p>
+    <% if @offer.photo.key %>
+      <p><%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %></p>
+    <% end %>
+  <% end %>
+</ol>
+
+<%= link_to "Create a new offer", new_offer_path%>

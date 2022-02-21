@@ -1,0 +1,9 @@
+<%= simple_form_for @offer do |f| %>
+  <%= f.input :name, placeholder: 'MySuperBand' %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :role, placeholder: 'Singer' %>
+  <%= f.input :instagram_link, placeholder: 'https://www.instagram.com/telaviv/' %>
+  <%= f.input :youtube_link, placeholder: 'https://youtu.be/CICqmmpOPs4' %>
+  <%= f.input :spotify_link, placeholder: 'https://open.spotify.com/playlist/37i9dQZF1DWSYF6geMtQMW' %>
+  <%= f.submit class: 'btn btn-flat' %>
+<% end %>
