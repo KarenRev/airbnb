@@ -1,6 +1,8 @@
 <h2>Name: <%= @offer.name %></h2>
 <p>Role: <%= @offer.role %></p>
-<p>Photo: <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %></p>
+<% if @offer.photo.key %>
+  <p>Photo: <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %></p>
+<% end %>
 <p>instagram: <%= @offer.instagram_link %></p>
 <p>youtube: <%= @offer.youtube_link %></p>
 <p>spotify: <%= @offer.spotify_link %></p>
