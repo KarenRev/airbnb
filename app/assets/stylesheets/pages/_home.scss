@@ -7,6 +7,10 @@
   background-size: cover;
   height: 80vh;
   margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .display-4, .lead {
@@ -30,4 +34,10 @@
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 2px;
   margin: 10px;
+  width: 50%;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
 }
