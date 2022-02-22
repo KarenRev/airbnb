@@ -1,5 +1,30 @@
 .login_container {
   display: flex;
   align-items: center;
-  background-color: red;
+  justify-content: center;
+  background-color: #eee;
+  padding: 60px;
+}
+
+.login_container_box {
+  // border: 1px solid;
+  margin: 5px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 2px #000000;
+}
+
+#login_h2 {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.login_button {
+border: 1px solid black;
+background-color: #156fb4;
+border-radius: 5px;
+text-align: center;
+color: white;
+font-weight: bold;
 }
