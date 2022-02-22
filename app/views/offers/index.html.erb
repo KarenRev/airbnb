@@ -3,8 +3,7 @@
   <% @offers.each do |offer| %>
     <li>Name: <%= link_to offer[:name], offer_path(offer[:id]) %></li>
     <p>Role: <%= offer.role %></p>
-    <p>id: <%= offer.id %></p>
-    <% if @offer.photo.key %>
+    <% if offer.photo.key %>
       <p><%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %></p>
     <% end %>
   <% end %>
