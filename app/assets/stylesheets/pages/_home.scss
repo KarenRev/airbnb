@@ -1,9 +1,43 @@
 // Specific CSS for your home-page
 .banner {
 /* \ */
-  background-image: url('https://media.istockphoto.com/photos/sound-wave-picture-id1287065554');
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-carnival-music-festival-music-festival-promotion-carnival-music-festival-image_13943.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 80vh;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.display-4, .lead {
+  color: aliceblue;
+  text-shadow: 1px;
+}
+
+.card-deck {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2px;
+  margin: 10px;
+  width: 50%;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
 }
