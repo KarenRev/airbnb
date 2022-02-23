@@ -1,7 +1,5 @@
-<br>
-<div class="container mb-5">
+<div class="flex-space-between container mt-5 mb-5">
   <h1>All the offers</h1>
-  <br>
   <%= link_to "Create a new offer", new_offer_path, class: "btn btn-ghost" %>
 </div>
 <div class="container mb-5">
@@ -16,16 +14,13 @@
               <div class="p-3 rounded-bottom d-flex flex-column">
                 <strong><%= offer.name %> </strong>
                 <small class="text-muted"><%= offer.role %></small>
-                <small class="text-muted">Created by user ID: <%= offer.user.id %></small>
               </div>
             </div>
           </a>
         </div>
     <% end %>
   </div>
-  <hr class="my-5">
-  <div class="row">
-    <div class="col-12 col-sm-6">
-    </div>
-  </div>
+  <% if (@offers.length > 0) %>
+    <%= link_to "Create a new offer", new_offer_path, class: "btn btn-ghost" %>
+  <% end %>
 </div>

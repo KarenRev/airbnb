@@ -8,3 +8,9 @@
 a {
   text-decoration: none;
 }
+
+.flex-space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,19 +1,29 @@
-<h2>Name: <%= @offer.name %></h2>
-<p>Role: <%= @offer.role %></p>
-<% if @offer.photo.key %>
-  <p>Photo: <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %></p>
-<% end %>
-<p>instagram: <%= @offer.instagram_link %></p>
-<p>youtube: <%= @offer.youtube_link %></p>
-<p>spotify: <%= @offer.spotify_link %></p>
-<br>
-<%= link_to "Book!", '#'%>
-<br>
-<%= link_to "Edit", edit_offer_path(@offer[:id])%>
-<br>
-<%= link_to "Delete #{@offer.name}",
+<div class="container mt-5 mb-5">
+  <div class="flex-space-between">
+    <h2><%= @offer.name %></h2>
+    <p><%= @offer.role %></p>
+  </div>
+  <% if @offer.photo.key %>
+    <p><%= cl_image_tag @offer.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
+  <% end %>
+  <p>instagram: <%= @offer.instagram_link %></p>
+  <p>spotify: <%= @offer.spotify_link %></p>
+  <% link = "https://www.youtube.com/embed/#{@offer.youtube_link.gsub(/https:\/\/youtu.be\/(.+)/, '\1')}" %>
+  <div>
+    <iframe width="560" height="315" src=<%= link %>   title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <%= link_to "Book!", '#', class: "btn btn-flat" %>
+</div>
+<div class="flex-space-between container mt-5 mb-5">
+  <div>
+    <%= link_to 'Back to the list', offers_path, class: "btn btn-gradient" %>
+  </div>
+  <div>
+    <%= link_to "Edit", edit_offer_path(@offer[:id]), class: "btn btn-ghost" %>
+
+    <%= link_to "Delete #{@offer.name}",
             offer_path(@offer),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
-<br>
-<%= link_to 'Back to the list', offers_path %>
+            data: { confirm: "Are you sure?" }, class: "btn btn-ghost" %>
+  </div>
+</div>
