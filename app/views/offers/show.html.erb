@@ -1,29 +1,35 @@
-<div class="container mt-5 mb-5">
-  <div class="flex-space-between">
-    <h2><%= @offer.name %></h2>
-    <p><%= @offer.role %></p>
-  </div>
-  <% if @offer.photo.key %>
-    <p><%= cl_image_tag @offer.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
-  <% end %>
-  <p>instagram: <%= @offer.instagram_link %></p>
-  <p>spotify: <%= @offer.spotify_link %></p>
-  <% link = "https://www.youtube.com/embed/#{@offer.youtube_link.gsub(/https:\/\/youtu.be\/(.+)/, '\1')}" %>
-  <div>
-    <iframe width="560" height="315" src=<%= link %>   title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-  <%= link_to "Book!", '#', class: "btn btn-flat" %>
-</div>
-<div class="flex-space-between container mt-5 mb-5">
-  <div>
-    <%= link_to 'Back to the list', offers_path, class: "btn btn-gradient" %>
-  </div>
-  <div>
-    <%= link_to "Edit", edit_offer_path(@offer[:id]), class: "btn btn-ghost" %>
+<div class="light-background">
+  <div class="container mt-5 mb-5 p-3"  >
+    <div class="flex-space-between">
+      <div>
+        <h2><%= @offer.name %></h2>
+        <p><%= @offer.role %></p>
+      </div>
+      <div>
+        <%= link_to "Book!", '#', class: "btn btn-flat" %>
+      </div>
+    </div>
+    <% if @offer.photo.key %>
+      <p><%= cl_image_tag @offer.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
+    <% end %>
+    <% youtube_link = "https://www.youtube.com/embed/#{@offer.youtube_link.gsub(/https:\/\/youtu.be\/(.+)/, '\1')}" %>
+    <% instagram_link = "#{@offer.instagram_link}" %>
+    <% spotify_link = "#{@offer.spotify_link}" %>
+    <div>
+      <iframe src=<%= youtube_link %>  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p>You can also see <%= @offer.name%>'s <%= link_to 'instagram', instagram_link, target: "_blank"%> and <%= link_to 'spotyfy', spotify_link, target: "_blank"%> pages.</p>
+  <div class="flex-space-between container mt-5 mb-5">
+    <div>
+      <%= link_to 'Back to the list', offers_path, class: "btn btn-gradient" %>
+    </div>
+    <div>
+      <%= link_to "Edit", edit_offer_path(@offer[:id]), class: "btn btn-ghost" %>
 
-    <%= link_to "Delete #{@offer.name}",
-            offer_path(@offer),
-            method: :delete,
-            data: { confirm: "Are you sure?" }, class: "btn btn-ghost" %>
+      <%= link_to "Delete",
+              offer_path(@offer),
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class: "btn btn-ghost" %>
+    </div>
   </div>
 </div>
