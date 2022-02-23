@@ -27,3 +27,10 @@ a {
 //     background-image: linear-gradient(rgba(255, 139, 158, 0.5), rgba(255, 139, 158, 0.5)), url('https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-carnival-music-festival-music-festival-promotion-carnival-music-festival-image_13943.jpg');
 //     background-size: cover;
 //   }
+
+.mapboxgl-ctrl-geocoder {
+  max-width: none;
+  width: 100%;
+  border: 1px solid lightgrey;
+  box-shadow: none;
+}

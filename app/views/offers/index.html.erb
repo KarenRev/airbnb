@@ -3,7 +3,7 @@
   <h1>All the offers</h1>
   <%= link_to "Create a new offer", new_offer_path, class: "btn btn-ghost" %>
   </div>
-  <div class="light-background container mb-5 p-3 rounded">
+  <div class="container mb-5 p-3 rounded">
     <div class="row my-2">
       <% @offers.each do |offer| %>
           <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
@@ -25,4 +25,10 @@
   <% if (@offers.length > 0) %>
     <%= link_to "Create a new offer", new_offer_path, class: "btn btn-ghost" %>
   <% end %>
+
+  <div class="container mt-5 p-3 rounded" style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
