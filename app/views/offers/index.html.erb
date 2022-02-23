@@ -1,7 +1,9 @@
-<h1>All the offers (singers)</h1>
-
-<%= link_to "Create a new offer", new_offer_path%>
-
+<br>
+<div class="container mb-5">
+  <h1>All the offers</h1>
+  <br>
+  <%= link_to "Create a new offer", new_offer_path, class: "btn btn-ghost" %>
+</div>
 <div class="container mb-5">
   <div class="row my-2">
     <% @offers.each do |offer| %>
