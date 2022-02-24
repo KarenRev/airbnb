@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 2022_02_23_152739) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.bigint "offer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
+    t.index ["offer_id"], name: "index_bookings_on_offer_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "offers", force: :cascade do |t|
     t.string "role"
     t.string "instagram_link"
@@ -74,5 +85,7 @@ ActiveRecord::Schema.define(version: 2022_02_23_152739) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "offers"
+  add_foreign_key "bookings", "users"
   add_foreign_key "offers", "users"
 end

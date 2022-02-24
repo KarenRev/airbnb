@@ -1,4 +1,4 @@
-.login_container {
+.sign_in_container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,7 +6,7 @@
   padding: 60px;
 }
 
-.login_container_box {
+.sign_in_container_box {
   margin: 5px;
   padding: 30px;
   background-color: white;
@@ -14,13 +14,13 @@
   border-radius: 10px;
 }
 
-#login_h2 {
+#sign_up_h2 {
   color: black;
   font-weight: bold;
   text-align: center;
 }
 
-.login_button_login_page {
+.sign_up_button_sign_up_page {
 border: 1px solid black;
 background-color: #156fb4;
 border-radius: 8px;
