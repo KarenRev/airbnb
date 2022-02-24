@@ -29,3 +29,5 @@ photos = ['https://www.warble-entertainment.com/blog/wp-content/uploads/2019/10/
   new_offer.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   new_offer.save!
 end
+
+Booking.create!(date: Date.today, user: User.first, offer: Offer.first, status: 'pending')
