@@ -19,7 +19,7 @@
     <div>
       <iframe src=<%= youtube_link %>  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <p>You can also see <%= @offer.name%>'s <%= link_to 'instagram', instagram_link, target: "_blank"%> and <%= link_to 'spotyfy', spotify_link, target: "_blank"%> pages.</p>
+    <p>You can also see <%= @offer.name%>'s <%= link_to 'instagram', instagram_link, target: "_blank"%> and <%= link_to 'spotify', spotify_link, target: "_blank"%> pages.</p>
   <div class="flex-space-between container mt-5 mb-5">
     <div>
       <%= link_to 'Back to the list', offers_path, class: "btn btn-gradient" %>
