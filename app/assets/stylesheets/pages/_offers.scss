@@ -8,3 +8,29 @@
 a {
   text-decoration: none;
 }
+
+.flex-space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list-in-line {
+  list-style: none;
+  display: inline;
+  font-size: 50px;
+  text-justify: distribute;
+  // justify-content: space-around;
+}
+
+// .light-background {
+//     background-image: linear-gradient(rgba(255, 139, 158, 0.5), rgba(255, 139, 158, 0.5)), url('https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-carnival-music-festival-music-festival-promotion-carnival-music-festival-image_13943.jpg');
+//     background-size: cover;
+//   }
+
+.mapboxgl-ctrl-geocoder {
+  max-width: none;
+  width: 100%;
+  border: 1px solid lightgrey;
+  box-shadow: none;
+}

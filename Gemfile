@@ -34,6 +34,9 @@ gem 'dotenv-rails', groups: [:development, :test]
 # https://kitt.lewagon.com/camps/794/lectures/05-Rails%2F05-Rails-MC-with-images#
 gem 'cloudinary', '~> 1.16.0'
 
+# https://kitt.lewagon.com/camps/794/lectures/05-Rails%2F08-Airbnb-Geocoder#
+gem "geocoder"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

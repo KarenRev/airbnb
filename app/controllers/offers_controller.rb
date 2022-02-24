@@ -3,6 +3,15 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+
+    # the `geocoded` scope filters only offers with coordinates (latitude & longitude)
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+      }
+    end
   end
 
   def new
@@ -45,6 +54,6 @@ class OffersController < ApplicationController
 
   # Only allow a trusted parameter "white offer" through.
   def offer_params
-    params.require(:offer).permit(:name, :role, :photo, :instagram_link, :youtube_link, :spotify_link)
+    params.require(:offer).permit(:name, :role, :photo, :instagram_link, :youtube_link, :spotify_link, :address)
   end
 end
